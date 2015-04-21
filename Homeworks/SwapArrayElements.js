@@ -4,17 +4,24 @@ function indent (array, i) {
 		for (j = 0; j < i*6; j++) {
 	    	array.push(array.shift());
 		}
-		console.log(array);
+		// console.log(array);
 	} else {
 		for (j = 0; j < -i; j++) {
 	    	array.push(array.shift());
 		}
-		console.log(array);
+		// console.log(array);
 	}
 }
 
-indent( [1, 2, 3, 4, 5, 6, 7], 3 ); // must return [5, 6, 7, 1, 2, 3, 4]
-indent( [1, 2, 3, 4, 5, 6, 7], 5 ); // must return [3, 4, 5, 6, 7, 1, 2]
-indent( [1, 2, 3, 4, 5, 6, 7], 15 ); // must return [7, 1, 2, 3, 4, 5, 6]
-indent( [1, 2, 3, 4, 5, 6, 7], -3 ); // must return [4, 5, 6, 7, 1, 2, 3]
-indent( [1, 2, 3, 4, 5, 6, 7], -13 ); // must return [7, 1, 2, 3, 4, 5, 6]
+// indent( [1, 2, 3, 4, 5, 6, 7], 3 ); // must return [5, 6, 7, 1, 2, 3, 4]
+// indent( [1, 2, 3, 4, 5, 6, 7], 5 ); // must return [3, 4, 5, 6, 7, 1, 2]
+// indent( [1, 2, 3, 4, 5, 6, 7], 15 ); // must return [7, 1, 2, 3, 4, 5, 6]
+// indent( [1, 2, 3, 4, 5, 6, 7], -3 ); // must return [4, 5, 6, 7, 1, 2, 3]
+// indent( [1, 2, 3, 4, 5, 6, 7], -13 ); // must return [7, 1, 2, 3, 4, 5, 6]
+
+console.time('indent');
+	for (var i = 0; i < 10000; i++) {
+		indent([1,2,3], 2)
+	}
+console.timeEnd('indent');
+// indent: 21.692ms
