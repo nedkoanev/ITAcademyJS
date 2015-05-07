@@ -1,8 +1,8 @@
 function solve (input) {
-	var nameReg = /<embed\s.+\sname="(.+?)"/g;
-	var srcReg = /<embed\ssrc="(.+?)"/g;
-	var widthReg = /<embed\s.+\swidth="(.+?)"/g;
-	var heightReg = /<embed\s.+\sheight="(.+?)"/g;
+	var nameReg = /<embed\s?.*\s?name="(.+?)"/g;
+	var srcReg = /<embed\s?.*\s?src="(.+?)"/g;
+	var widthReg = /<embed\s?.*\s?width="(.+?)"/g;
+	var heightReg = /<embed\s?.*\s?height="(.+?)"/g;
 	var versionReg = /version=(.+?)"/g;
 
 	matchName = nameReg.exec(input);
