@@ -3,7 +3,7 @@ function solve (input) {
 	var srcReg = /<embed\s?.*\s?src="(.+?)"/g;
 	var widthReg = /<embed\s?.*\s?width="(.+?)"/g;
 	var heightReg = /<embed\s?.*\s?height="(.+?)"/g;
-	var versionReg = /version=(.+?)"/g;
+	var versionReg = /version="?(.+?)"/g;
 
 	matchName = nameReg.exec(input);
 	matchSrc = srcReg.exec(input);
@@ -22,7 +22,6 @@ console.log('<div id="' + matchName[1] + '"></div><script>swfobject.embedSWF("' 
 
 }
 
-
 solve([
    '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" width="468" height="60" id="mymoviename">',
       '<param name="movie" value="example.swf" />',
@@ -33,8 +32,6 @@ solve([
 ].join(''));
 
 // console.log(input);
-
-
 // Output:
 // console.log('<div id="mymoviename"></div><script>swfobject.embedSWF("example.swf", "mymoviename", "468", "60", "6.0.40.0");</script>');
 // <div id="mymoviename"></div><script>swfobject.embedSWF("example.swf", "mymoviename", "468", "60", "6.0.40.0");</script>
